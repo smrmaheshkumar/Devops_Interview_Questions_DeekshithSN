@@ -61,6 +61,9 @@ Maven
 6. what are the settings you need to do before running mvn deploy?
 
 7. why maven takes much time for 1st execution and from 2nd execution it will take less time?
+ 
+   For the first time it will download all the dependencies we have mentioned and will place it in .m2 \
+   For the second time if you run again it will refer from .m2 so it will take very less time
 
 Unix and Shell Scripting 
 --------------------------------------------------------------------------------------------------------
