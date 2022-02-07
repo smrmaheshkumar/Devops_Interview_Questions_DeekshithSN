@@ -5,9 +5,9 @@ GIT
 ---------------------------------------------------------------------------------------------------------------------------------
 1. Why we need git? What makes git unique from other tools like SVN?
 
-Git is the most commonly used Version control system. It will track the changes you made to a file, so you have a recoed of what you have been done and you can revert back to the specified versions. \
-Git also makes collobaration easier, allowing changes by multiple people to all be merged into one sources. \
-Git is a Decentralized Version Control tool and commits are possible even if offline. Push/pull operations are faster when compared to SVN.
+   Git is the most commonly used Version control system. It will track the changes you made to a file, so you have a recoed of what you have been done and you can revert    back to the specified versions. \
+   Git also makes collobaration easier, allowing changes by multiple people to all be merged into one sources. \
+   Git is a Decentralized Version Control tool and commits are possible even if offline. Push/pull operations are faster when compared to SVN.
 
 ------------------------------------------------------------------------------------------------------------------------------------
 2. Let's say i have maven repo cloned on to my local, did some changes and i have build the code now target folder will be generated. So now when i do git operations like git add, git commit or any other git operations target folder should not be considered, how would you achieve the same?
