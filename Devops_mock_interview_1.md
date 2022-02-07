@@ -5,7 +5,7 @@ GIT
 ---------------------------------------------------------------------------------------------------------------------------------
 1. Why we need git? What makes git unique from other tools like SVN?
 
-   Git is the most commonly used Version control system. It will track the changes you made to a file, so you have a recoed of what you have been done and you can revert    back to the specified versions. \
+   Git is the most commonly used Version control system. It will track the changes that you made to a file, so you have a record of what you have been done and you can      revert back to the specified versions. \
    Git also makes collobaration easier, allowing changes by multiple people to all be merged into one sources. \
    Git is a Decentralized Version Control tool and commits are possible even if offline. Push/pull operations are faster when compared to SVN.
 
@@ -27,7 +27,7 @@ GIT
       git pull = git fetch + git merge
    ```
       **git pull**
-      git pull performs two functions using a single command. It fetches all the changes that were made to the remote branch and then merges those changes into our localbranch.
+      git pull performs two functions using a single command. It fetches all the changes that were made to the remote branch and then merges those changes into our             localbranch.
 
       **git fetch**
       git fetch just brings the remote changes into your local repo but doesnt apply them onto our branches. We need to explicitly apply those changes.
@@ -40,7 +40,7 @@ GIT
 
 Maven
 --------------------------------------------------------------------------------------------------------------------------
-5. When i issue mvn install what all things happen in background?
+5. When we issue mvn install what all things happen in background?
    
    There are three built in build lifecycles: default, clean and site \
    **clean**: cleans up artifacts created by prior builds. \
@@ -48,12 +48,12 @@ Maven
    **site**: generates site documentation for the project.
    
    **Phases of default Lifecycle**
-   **validate** − validate the project and check if everything is correct and all necessary information is available. \
-   **compile** − this phase compiles the source code of your project. \
-   **test** − tests the compiled source code by using a suitable unit testing framework. These tests should not require the code to be packaged or deployed \
-   **package** − takes the compiled code and packages it in its distributable format. \
-   **integration-test** − processes and deploys the package if possible into an environment where integration tests can be run. \
-   **verify** − runs any checks to verify the package is valid and meets the required quality criteria. \
+   **validate** − Validate the project and check if everything is correct and all necessary information is available. \
+   **compile** − This phase compiles the source code of your project. \
+   **test** − Tests the compiled source code by using a suitable unit testing framework. These tests should not require the code to be packaged or deployed \
+   **package** − Takes the compiled code and packages it in its distributable format. \
+   **integration-test** − Processes and deploys the package if possible into an environment where integration tests can be run. \
+   **verify** − Runs any checks to verify the package is valid and meets the required quality criteria. \
    **install** − installation of the package into the local repository. This is done to use it as a dependency in other projects locally. \
    **deploy** − done in an integration environment or release environment. Here the final package is copied to the remote repository for sharing with other developers        and projects.
  
@@ -62,13 +62,12 @@ Maven
 
 7. why maven takes much time for 1st execution and from 2nd execution it will take less time?
  
-   For the first time it will download all the dependencies we have mentioned and will place it in .m2 \
+   For the first time maven will download all the dependencies we have mentioned and will place it in .m2 \
    For the second time if you run again it will refer from .m2 so it will take very less time
 
 Unix and Shell Scripting 
 --------------------------------------------------------------------------------------------------------
 8. How to get present working folder?
-
    ```sh
    basename "$PWD"
    ```
