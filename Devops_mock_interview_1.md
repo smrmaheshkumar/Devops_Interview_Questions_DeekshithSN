@@ -21,9 +21,9 @@ Create one file .gitignore and add the folder to .gitignore
 ```
 ---------------------------------------------------------------------------------------------------------------------------
 3. difference between git pull and git fetch? \
-A. ``` sh
+A. ```sh
    git pull = git fetch + git merge
-   ```
+```
    **git pull**
    git pull performs two functions using a single command. It fetches all the changes that were made to the remote branch and then merges those changes into our localbranch. \
    
