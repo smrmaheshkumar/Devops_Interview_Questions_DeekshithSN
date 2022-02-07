@@ -71,8 +71,32 @@ Unix and Shell Scripting
    ```sh
    basename "$PWD"
    ```
+   or
+   ```sh
+   pwd | rev | cut -d '/' -f 1 | rev
+   ```
 9. How to copy files from local windows machine to cloud based Linux machine?
+
+   Goto Powershell in Windows 
+   ```sh
+   pscp ./filename root@192.168.43.32:/home
+   ```
+   viceversa
+   ```sh
+   pscp root@192.168.43.32:/home C:\Temp
+   
 10. A shell script named test.sh can accept 4 parameters i.e, a,b,c,d. the parameters wont be supplied in order always and number of parameters might also vary( only 2 parameters user might supply sometimes), how to identify position of letter c?
+   
+   **script.sh**
+   ```sh
+   i=0;
+   for p in "$@" ; do
+       i=$((i+1))
+           if [ "$p" = "c" ]; then 
+           echo "User supplied C has a parameter, in $i position"
+           fi
+   done
+   ```
 
 Ansible
 ---------------------------------------------------------------------------------------------------------------------
