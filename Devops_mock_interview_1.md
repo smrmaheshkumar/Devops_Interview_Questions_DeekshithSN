@@ -40,8 +40,26 @@ GIT
 
 Maven
 --------------------------------------------------------------------------------------------------------------------------
-5. when i issue mvn install what all things happen in background?
+5. When i issue mvn install what all things happen in background?
+   
+   There are three built in build lifecycles: default, clean and site \
+   **clean**: cleans up artifacts created by prior builds. \
+   **default**: used to build the application. \
+   **site**: generates site documentation for the project.
+   
+   **Phases of default Lifecycle**
+   **validate** − validate the project and check if everything is correct and all necessary information is available. \
+   **compile** − this phase compiles the source code of your project. \
+   **test** − tests the compiled source code by using a suitable unit testing framework. These tests should not require the code to be packaged or deployed \
+   **package** − takes the compiled code and packages it in its distributable format. \
+   **integration-test** − processes and deploys the package if possible into an environment where integration tests can be run. \
+   **verify** − runs any checks to verify the package is valid and meets the required quality criteria. \
+   **install** − installation of the package into the local repository. This is done to use it as a dependency in other projects locally. \
+   **deploy** − done in an integration environment or release environment. Here the final package is copied to the remote repository for sharing with other developers        and projects.
+ 
+---------------------------------------------------------------------------------------------------------------------------
 6. what are the settings you need to do before running mvn deploy?
+
 7. why maven takes much time for 1st execution and from 2nd execution it will take less time?
 
 Unix and Shell Scripting 
