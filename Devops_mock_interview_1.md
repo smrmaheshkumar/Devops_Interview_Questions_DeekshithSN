@@ -3,14 +3,14 @@
 
 GIT
 ---------------------------------------------------------------------------------------------------------------------------------
-1. Why we need git? What makes git unique from other tools like SVN?
+### 1. Why we need git? What makes git unique from other tools like SVN?
 
    Git is the most commonly used Version control system. It will track the changes that you made to a file, so you have a record of what you have been done and you can      revert back to the specified versions. \
    Git also makes collobaration easier, allowing changes by multiple people to all be merged into one sources. \
    Git is a Decentralized Version Control tool and commits are possible even if offline. Push/pull operations are faster when compared to SVN.
 
 ------------------------------------------------------------------------------------------------------------------------------------
-2. Let's say i have maven repo cloned on to my local, did some changes and i have build the code now target folder will be generated. So now when i do git operations like git add, git commit or any other git operations target folder should not be considered, how would you achieve the same?
+### 2. Let's say i have maven repo cloned on to my local, did some changes and i have build the code now target folder will be generated. So now when i do git operations like git add, git commit or any other git operations target folder should not be considered, how would you achieve the same?
 
    We can achieve this by using .gitignore \
    Create one file .gitignore and add the folder to .gitignore
@@ -22,7 +22,7 @@ GIT
       $ git push
     ```
 ---------------------------------------------------------------------------------------------------------------------------
-3. difference between git pull and git fetch?
+### 3. difference between git pull and git fetch?
    ```sh
       git pull = git fetch + git merge
    ```
@@ -33,14 +33,14 @@ GIT
       git fetch just brings the remote changes into your local repo but doesnt apply them onto our branches. We need to explicitly apply those changes.
 
 ---------------------------------------------------------------------------------------------------------------------------------
-4. How to clone specific branch in git?
+### 4. How to clone specific branch in git?
    ``` sh
        git clone -b branchname --single-branch gitcloneurl
    ```
 
 Maven
 --------------------------------------------------------------------------------------------------------------------------
-5. When we issue mvn install what all things happen in background?
+### 5. When we issue mvn install what all things happen in background?
    
    There are three built in build lifecycles: default, clean and site \
    **clean**: cleans up artifacts created by prior builds. \
@@ -58,16 +58,16 @@ Maven
    **deploy** − done in an integration environment or release environment. Here the final package is copied to the remote repository for sharing with other developers        and projects.
  
 ---------------------------------------------------------------------------------------------------------------------------
-6. what are the settings you need to do before running mvn deploy?
+### 6. what are the settings you need to do before running mvn deploy?
 
-7. why maven takes much time for 1st execution and from 2nd execution it will take less time?
+### 7. why maven takes much time for 1st execution and from 2nd execution it will take less time?
  
    For the first time maven will download all the dependencies we have mentioned and will place it in .m2 \
    For the second time if you run again it will refer from .m2 so it will take very less time
 
 Unix and Shell Scripting 
 --------------------------------------------------------------------------------------------------------
-8. How to get present working folder?
+### 8. How to get present working folder?
    ```sh
    basename "$PWD"
    ```
@@ -75,7 +75,7 @@ Unix and Shell Scripting
    ```sh
    pwd | rev | cut -d '/' -f 1 | rev
    ```
-9. How to copy files from local windows machine to cloud based Linux machine?
+### 9. How to copy files from local windows machine to cloud based Linux machine?
 
    Goto Powershell in Windows 
    ```sh
@@ -85,7 +85,7 @@ Unix and Shell Scripting
    ```sh
    pscp root@192.168.43.32:/home C:\Temp
    
-10. A shell script named test.sh can accept 4 parameters i.e, a,b,c,d. the parameters wont be supplied in order always and number of parameters might also vary( only 2 parameters user might supply sometimes), how to identify position of letter c?
+### 10. A shell script named test.sh can accept 4 parameters i.e, a,b,c,d. the parameters wont be supplied in order always and number of parameters might also vary( only 2 parameters user might supply sometimes), how to identify position of letter c?
    
     **script.sh**
       ```sh
@@ -100,23 +100,23 @@ Unix and Shell Scripting
 
 Ansible
 ---------------------------------------------------------------------------------------------------------------------
-11. Why we need ad-hoc ansible commands, scenario where you have used ansible ad-hoc command?
+### 11. Why we need ad-hoc ansible commands, scenario where you have used ansible ad-hoc command?
 
     Ad-hoc commands are simple one-line commands used to perform a certain task. It is an alternative to writing playbooks. An example of an Adhoc command is as follows:
     ```sh
     ansible all -m ping
     ```
-12. When i need detailed logs on executing ansible playbook what option i need to use?
+### 12. When i need detailed logs on executing ansible playbook what option i need to use?
     
     We can get the detailed logs by providing -v flag
     ```sh
     ansible-playbook -i hosts play.yml -vvv
     ```
-13. what is ansible.cfg file?
+### 13. what is ansible.cfg file?
 
     This is the brain and the heart of Ansible. The file that governs the behavior of all interactions performed by the control node. In Ansible's case that default         configuration file is **ansible.cfg** located in /etc/ansible/
 
-14. what are the modules have you worked on? which module will you use for getting the file from node to master?
+### 14. what are the modules have you worked on? which module will you use for getting the file from node to master?
 
     I have worked on copy, fetch, yum, debug, Get_url, expect, Template, file, apt, Command, Shell.
     
@@ -133,7 +133,7 @@ Ansible
             dest: dest_path
      ```
 
-15. Lets say i have a playbook which has 5 tasks in playbook, first 2 tasks should run on local machine and other 3 tasks should run on node?
+### 15. Lets say i have a playbook which has 5 tasks in playbook, first 2 tasks should run on local machine and other 3 tasks should run on node?
 
     We can achieve this by using multiple play \
     **multiple_play.yml**
