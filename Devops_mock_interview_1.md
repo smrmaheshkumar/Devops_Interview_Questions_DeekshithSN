@@ -91,92 +91,85 @@ Unix and Shell Scripting
    
 ------------------------------------------------------------------------------------------------
 ### 10. A shell script named test.sh can accept 4 parameters i.e, a,b,c,d. the parameters wont be supplied in order always and number of parameters might also vary( only 2 parameters user might supply sometimes), how to identify position of letter c?
-   
-    **script.sh**
-      ```sh
-      i=0;
-      for p in "$@" ; do
-          i=$((i+1))
-              if [ "$p" = "c" ]; then 
-              echo "User supplied C has a parameter, in $i position"
-              fi
-      done
-      ```
+   **script.sh**
+   ```sh
+   i=0;
+   for p in "$@" ; do
+       i=$((i+1))
+           if [ "$p" = "c" ]; then 
+           echo "User supplied C has a parameter, in $i position"
+           fi
+   done
+   ```
 
 Ansible
 ---------------------------------------------------------------------------------------------------------------------
 ### 11. Why we need ad-hoc ansible commands, scenario where you have used ansible ad-hoc command?
-
-    Ad-hoc commands are simple one-line commands used to perform a certain task. It is an alternative to writing playbooks. An example of an Adhoc command is as follows:
-
-    ```sh
-    ansible all -m ping
-    ```
+Ad-hoc commands are simple one-line commands used to perform a certain task. It is an alternative to writing playbooks. An example of an Adhoc command is as follows:
+   ```sh
+   ansible all -m ping
+   ```
+   
 ------------------------------------------------------------------------------------------------
 ### 12. When i need detailed logs on executing ansible playbook what option i need to use?
-    
-    We can get the detailed logs by providing -v flag
-
-    ```sh
-    ansible-playbook -i hosts play.yml -vvv
-    ```
+We can get the detailed logs by providing -v flag
+   ```sh
+   ansible-playbook -i hosts play.yml -vvv
+   ```
 ------------------------------------------------------------------------------------------------
 ### 13. what is ansible.cfg file?
 
-    This is the brain and the heart of Ansible. The file that governs the behavior of all interactions performed by the control node. In Ansible's case that default         configuration file is **ansible.cfg** located in /etc/ansible/
+This is the brain and the heart of Ansible. The file that governs the behavior of all interactions performed by the control node. In Ansible's case that default         configuration file is **ansible.cfg** located in /etc/ansible/
 
 ------------------------------------------------------------------------------------------------
 ### 14. what are the modules have you worked on? which module will you use for getting the file from node to master?
-
-    I have worked on copy, fetch, yum, debug, Get_url, expect, Template, file, apt, Command, Shell.
-    
-    Fetch module is used to get the file from node to master
-    ```sh
-    ---
-    - hosts: dev
-      become: yes
-      gather_facts: false
-      tasks:
-        - name: Install application tree
-          fetch:
-            src: src_path
-            dest: dest_path
-     ```
+I have worked on copy, fetch, yum, debug, Get_url, expect, Template, file, apt, Command, Shell. \
+Fetch module is used to get the file from node to master
+   ```sh
+   ---
+   - hosts: dev
+     become: yes
+     gather_facts: false
+     tasks:
+       - name: Install application tree
+         fetch:
+           src: src_path
+           dest: dest_path
+   ```
 
 ------------------------------------------------------------------------------------------------
 ### 15. Lets say i have a playbook which has 5 tasks in playbook, first 2 tasks should run on local machine and other 3 tasks should run on node?
+We can achieve this by using multiple play \
+   **multiple_play.yml**
+   ```sh
+   ---
+   - hosts: localhost
+     become: yes
+     gather_facts: false
+     tasks:
+       - name: installing wget 
+         apt:
+           name: wget
+           state: present 
+       - name: download Jenkins
+         get_url:
+           url: https://updates.jenkins-ci.org/download/war/2.248/jenkins.war
+           dest: /home/spovedd
+   - hosts: dev
+     become: yes
+     gather_facts: false
+     tasks:
+       - name: copy jenkins war to host machines
+         copy:
+           src: /home/spovedd/jenkins.war
+           dest: /home/jenkins.war
+       - name: creating folder structure and running jenkins in the background 
+         shell: |
+           mkdir -p /home/spovedd/jenkins
+           mv /home/jenkins.war /home/spovedd/jenkins
+           nohup java -jar /home/spovedd/jenkins/jenkins.war &
+   ```
 
-    We can achieve this by using multiple play \
-    **multiple_play.yml**
-    ```sh
-    ---
-    - hosts: localhost
-      become: yes
-      gather_facts: false
-      tasks:
-        - name: installing wget 
-          apt:
-            name: wget
-            state: present 
-        - name: download Jenkins
-          get_url:
-            url: https://updates.jenkins-ci.org/download/war/2.248/jenkins.war
-            dest: /home/spovedd
-
-    - hosts: dev
-      become: yes
-      gather_facts: false
-      tasks:
-        - name: copy jenkins war to host machines
-          copy:
-            src: /home/spovedd/jenkins.war
-            dest: /home/jenkins.war
-        - name: creating folder structure and running jenkins in the background 
-          shell: |
-            mkdir -p /home/spovedd/jenkins
-            mv /home/jenkins.war /home/spovedd/jenkins
-            nohup java -jar /home/spovedd/jenkins/jenkins.war &
-      ```
 Jenkins
 -----------------------------------------------------------------------------------------------------------------------
 16. How to save only last 5 builds of jenkins job?
