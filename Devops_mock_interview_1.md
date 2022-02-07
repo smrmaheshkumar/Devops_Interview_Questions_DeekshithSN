@@ -20,20 +20,19 @@ Create one file .gitignore and add the folder to .gitignore
     $ git push
 ```
 ---------------------------------------------------------------------------------------------------------------------------
-3. difference between git pull and git fetch? \
-
+3. difference between git pull and git fetch?
    ```sh
    git pull = git fetch + git merge
    ```
    **git pull**
-   git pull performs two functions using a single command. It fetches all the changes that were made to the remote branch and then merges those changes into our localbranch. \
+   git pull performs two functions using a single command. It fetches all the changes that were made to the remote branch and then merges those changes into our localbranch.
    
    **git fetch**
    git fetch just brings the remote changes into your local repo but doesnt apply them onto our branches. We need to explicitly apply those changes.
 
 ---------------------------------------------------------------------------------------------------------------------------------
 4. How to clone specific branch in git?
-A. ``` sh
+   ``` sh
    git clone -b branchname --single-branch gitcloneurl
    ```
 
