@@ -191,6 +191,11 @@ Jenkins
 -------------------------------------------------------------------------------------------------------------
 ### 19. If you forget Jenkins password, how would you login back?
 
+   Please goto config.xml under jenkins_home and then make false as below
+   ```sh
+   <userSecurity>false</useSecurity>
+   ```
+
 Docker
 ------------------------------------------------------------------------------------------------------------------------------
 20. Any 3 best practices of docker?
