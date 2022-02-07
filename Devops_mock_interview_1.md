@@ -263,7 +263,26 @@ Kubernetes
    kubectl describe pod/podname -n namespace --kubeconfig config
    ```
  
----------------------------------------------------------------------------------------------------
-28. What is liveness and readiness probe? Why we need them?
-29. Have you worked on kubernetes monitoring? Which tools you have used?
-30. Can we deploy a pod on particular node?
+ ---------------------------------------------------------------------------------------------------
+### 28. What is liveness and readiness probe? Why we need them?
+
+   **Liveness Probe:** \
+   Kubernetes uses liveness probes to know when to restart a container \
+   If a container is unresponsive -- perhaps the application is deadlocked due to multi-threading defect - restarting the container make the application more available, despite    the defect. It certainly beats paging someone in the middle of the night to restart a container.
+   
+   **Rediness Probe:** \
+   Kubernetes uses readiness probes to decide when the container is available for accepting the traffic. \
+   The readiness probe is used to control which pods are used as the backends for a service. \
+   A pod is considered ready when all of its containers are ready. If a pod is not ready, it is removed from service load balancers. \
+   
+   **For example:** If a container loads a large cache at startups and takes a minute to start, you do not want to start requests to this container untill it is ready, or the      request will fail -- you want to route requests to other pods, which are capable of servicing requests.
+   
+-------------------------------------------------------------------------------------------------------
+### 29. Have you worked on kubernetes monitoring? Which tools you have used?
+   
+### 30. Can we deploy a pod on particular node?
+   We can do this as we have so many approaches like Node selctor, Node affinity, taints, tolerations \
+   For now we will go through node selector. In this we neet to mention labels of node in the selector in pod.yml \
+   ```sh
+   kubectl label nodes node-name size-medium
+   ```
