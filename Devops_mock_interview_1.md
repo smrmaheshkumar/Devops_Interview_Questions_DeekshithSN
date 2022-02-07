@@ -12,13 +12,13 @@ Git is a Decentralized Version Control tool and commits are possible even if off
 2. Let's say i have maven repo cloned on to my local, did some changes and i have build the code now target folder will be generated. So now when i do git operations like git add, git commit or any other git operations target folder should not be considered, how would you achieve the same? \
 A. We can achieve this by using .gitignore
 Create one file .gitignore and add the folder to .gitignore
-    ``` sh
+```sh
     $ vi .gitignore
       target/
     $ git add .
     $ git commit -m "target added to .gitignore"
     $ git push
-    ```
+```
 ---------------------------------------------------------------------------------------------------------------------------
 3. difference between git pull and git fetch? \
 A. ``` sh
