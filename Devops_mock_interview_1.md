@@ -108,6 +108,7 @@ Ansible
 ### 11. Why we need ad-hoc ansible commands, scenario where you have used ansible ad-hoc command?
 
     Ad-hoc commands are simple one-line commands used to perform a certain task. It is an alternative to writing playbooks. An example of an Adhoc command is as follows:
+
     ```sh
     ansible all -m ping
     ```
@@ -115,6 +116,7 @@ Ansible
 ### 12. When i need detailed logs on executing ansible playbook what option i need to use?
     
     We can get the detailed logs by providing -v flag
+
     ```sh
     ansible-playbook -i hosts play.yml -vvv
     ```
