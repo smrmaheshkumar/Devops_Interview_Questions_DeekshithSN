@@ -60,6 +60,7 @@ Maven
 ---------------------------------------------------------------------------------------------------------------------------
 ### 6. what are the settings you need to do before running mvn deploy?
 
+------------------------------------------------------------------------------------------------------------------
 ### 7. why maven takes much time for 1st execution and from 2nd execution it will take less time?
  
    For the first time maven will download all the dependencies we have mentioned and will place it in .m2 \
@@ -75,6 +76,7 @@ Unix and Shell Scripting
    ```sh
    pwd | rev | cut -d '/' -f 1 | rev
    ```
+------------------------------------------------------------------------------------------------
 ### 9. How to copy files from local windows machine to cloud based Linux machine?
 
    Goto Powershell in Windows 
@@ -84,7 +86,9 @@ Unix and Shell Scripting
    viceversa
    ```sh
    pscp root@192.168.43.32:/home C:\Temp
+   ```
    
+------------------------------------------------------------------------------------------------
 ### 10. A shell script named test.sh can accept 4 parameters i.e, a,b,c,d. the parameters wont be supplied in order always and number of parameters might also vary( only 2 parameters user might supply sometimes), how to identify position of letter c?
    
     **script.sh**
@@ -106,16 +110,19 @@ Ansible
     ```sh
     ansible all -m ping
     ```
+------------------------------------------------------------------------------------------------
 ### 12. When i need detailed logs on executing ansible playbook what option i need to use?
     
     We can get the detailed logs by providing -v flag
     ```sh
     ansible-playbook -i hosts play.yml -vvv
     ```
+------------------------------------------------------------------------------------------------
 ### 13. what is ansible.cfg file?
 
     This is the brain and the heart of Ansible. The file that governs the behavior of all interactions performed by the control node. In Ansible's case that default         configuration file is **ansible.cfg** located in /etc/ansible/
 
+------------------------------------------------------------------------------------------------
 ### 14. what are the modules have you worked on? which module will you use for getting the file from node to master?
 
     I have worked on copy, fetch, yum, debug, Get_url, expect, Template, file, apt, Command, Shell.
@@ -133,6 +140,7 @@ Ansible
             dest: dest_path
      ```
 
+------------------------------------------------------------------------------------------------
 ### 15. Lets say i have a playbook which has 5 tasks in playbook, first 2 tasks should run on local machine and other 3 tasks should run on node?
 
     We can achieve this by using multiple play \
