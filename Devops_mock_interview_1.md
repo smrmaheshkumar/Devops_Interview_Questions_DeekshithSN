@@ -198,16 +198,63 @@ Jenkins
 
 Docker
 ------------------------------------------------------------------------------------------------------------------------------
-20. Any 3 best practices of docker?
-21. Difference between docker stop and docker kill?
-22. Command to list conatiners which state is exited?
-23. command to clean-up docker host ( deleting stopped conatiners, dangling images and unused networks)?
-24. What version of docker you have used? Specific reason to use that particular version?
-25. Can we have multiple CMD in Dockerfile?
-26. Have you worked on docker swarm and docker compose?
+### 20. Any 3 best practices of docker?
+
+   => ALways keep Dockerfile in an empty directory or make sure directory where Dockerfile present with required files \
+   => Use official images when possible \
+   => Use more specific tags for the images \
+   => Look for minimal flavours (Using a different base image will reduce the image size \
+   => Multi-Stage builds to remove build deps \
+   
+----------------------------------------------------------------------------------------------------------------------
+### 21. Difference between docker stop and docker kill?
+   **docker stop**
+   Stops a running container (send SIGTERM and then SIGKILL after grace period) \
+   The main process inside the container will receive SIGTERM and after a grace period SIGKILL
+   
+   **docker kill**
+   Killing a running container (Send SIGKILL or specified signal) \
+   The main process inside the container will be sent SIGKILL or any signal specified with option --signal
+   
+   We can see the events by docker events
+
+-----------------------------------------------------------------------------------------------------------------------
+### 22. Command to list conatiners which state is exited?
+   ```sh
+   docker ps -a -f status=running
+   docker ps -a -f status=exited
+   docker ps -a -f status=created
+   ```
+   Here -f is a filter \
+   To remove a stopped container
+   ```sh
+   docker rm $(docker ps -a -f status=exited -q)
+   ```
+   
+----------------------------------------------------------------------------------------------------------------------------
+### 23. command to clean-up docker host ( deleting stopped conatiners, dangling images and unused networks)?
+   ```sh
+   docker system prune
+   ```
+   
+----------------------------------------------------------------------------------------------------------------------------
+### 24. What version of docker you have used? Specific reason to use that particular version?
+   Please visit https://docs.docker.com/release-notes/
+
+-----------------------------------------------------------------------------------------------------------------------------
+### 25. Can we have multiple CMD in Dockerfile?
+   We can have multiple CMD's but it wont take into account. It will take the lase CMD. So better to take last CMD
+
+---------------------------------------------------------------------------------------------------------------------------
+### 26. Have you worked on docker swarm and docker compose?
+   **Docker Swarm**
+   Docker swarm is a container orchestration tool, meaning that it allows the user to manage multiple containers deployed across multiple host machines. One of the key      benefits associated with the operation of a docker swarm is the high level of availability offered for applications.
+   
+   **Docker Compose**
+   Docker Compose is a tool that was developed to help define and share multi-container applications. With Compose, we can create a YAML file to define the services and    with a single command, can spin everything up or tear it all down.
 
 Kubernetes
---------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
 27. Can we have multiple conatiners in a pod? Can we have similar conatiners in a pod? Lets say i have 4 conatiners, one of them has failed how would you check which container has failed?
 28. What is liveness and readiness probe? Why we need them?
 29. Have you worked on kubernetes monitoring? Which tools you have used?
