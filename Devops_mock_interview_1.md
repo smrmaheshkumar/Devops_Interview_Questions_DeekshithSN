@@ -135,7 +135,7 @@ Ansible
 
 15. Lets say i have a playbook which has 5 tasks in playbook, first 2 tasks should run on local machine and other 3 tasks should run on node?
 
-    We can achieve this by using multiple play
+    We can achieve this by using multiple play \
     **multiple_play.yml**
     ```sh
     ---
