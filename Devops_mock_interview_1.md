@@ -68,6 +68,10 @@ Maven
 Unix and Shell Scripting 
 --------------------------------------------------------------------------------------------------------
 8. How to get present working folder?
+
+   ```sh
+   basename "$PWD"
+   ```
 9. How to copy files from local windows machine to cloud based Linux machine?
 10. A shell script named test.sh can accept 4 parameters i.e, a,b,c,d. the parameters wont be supplied in order always and number of parameters might also vary( only 2 parameters user might supply sometimes), how to identify position of letter c?
 
