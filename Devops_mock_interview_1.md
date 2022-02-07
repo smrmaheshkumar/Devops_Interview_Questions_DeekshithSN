@@ -20,7 +20,7 @@ GIT
       $ git add .
       $ git commit -m "target added to .gitignore"
       $ git push
-    ```
+   ```
 ---------------------------------------------------------------------------------------------------------------------------
 ### 3. difference between git pull and git fetch?
    ```sh
