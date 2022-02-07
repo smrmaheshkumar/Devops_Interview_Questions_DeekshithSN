@@ -255,7 +255,15 @@ Docker
 
 Kubernetes
 ------------------------------------------------------------------------------------------------------------------------------
-27. Can we have multiple conatiners in a pod? Can we have similar conatiners in a pod? Lets say i have 4 conatiners, one of them has failed how would you check which container has failed?
+### 27. Can we have multiple conatiners in a pod? Can we have similar conatiners in a pod? Lets say i have 4 conatiners, one of them has failed how would you check which container has failed?
+    Yes we can have multiple containers in a Pod. \
+    Similar containers can be there in a single Pod. \
+    We can check the failed Pod status by
+   ```sh
+   kubectl describe pod/podname -n namespace --kubeconfig config
+   ```
+ 
+---------------------------------------------------------------------------------------------------
 28. What is liveness and readiness probe? Why we need them?
 29. Have you worked on kubernetes monitoring? Which tools you have used?
 30. Can we deploy a pod on particular node?
