@@ -5,7 +5,8 @@ GIT
 ---------------------------------------------------------------------------------------------------------------------------------
 ### 1. Why we need git? What makes git unique from other tools like SVN?
 
-   Git is the most commonly used Version control system. It will track the changes that you made to a file, so you have a record of what you have been done and you can      revert back to the specified versions. \
+   Git is the most commonly used Version control system. It will track the changes that you made to a file, so you have a record of what you have been done and 
+   you can revert back to the specified versions. \
    Git also makes collobaration easier, allowing changes by multiple people to all be merged into one sources. \
    Git is a Decentralized Version Control tool and commits are possible even if offline. Push/pull operations are faster when compared to SVN.
 
